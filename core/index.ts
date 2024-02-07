@@ -3,14 +3,6 @@
 import chalk from 'chalk'
 import { UndoRedoStack } from "./undo-redo-stack"
 
-interface Data {
-  x: number
-}
-
-interface Store {
-  data: Data
-}
-
 interface Command {
   execute(): void
 }
@@ -26,6 +18,12 @@ class InitializeCommand implements Command {
     console.log(`CMD: ${chalk.blue('initialize')}`)
     this.store.data = { x: this.value }
     this.undoRedoStack.initialize(this.store.data)
+  }
+}
+
+interface Store {
+  data: {
+    x: number
   }
 }
 
@@ -93,7 +91,7 @@ const debug = new DebugCommand(undoRedoStack, store)
 const commands = [
   initialize,
   increment1,
-  increment1,
+  decrement1,
   increment1,
   undo,
   undo,
