@@ -1,0 +1,57 @@
+{
+  "name": "@padcom/draw",
+  "version": "0.0.1",
+  "description": "",
+  "keywords": [],
+  "author": "Matthias Hryniszak <padcom@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "vite",
+    "build": "vite build",
+    "build:watch": "vite build -w",
+    "preview": "vite build && vite preview"
+  },
+  "devDependencies": {
+    "@padcom/eslint-config-vue": "^0.6.0",
+    "@padcom/nano-css-reset": "^0.0.1",
+    "@types/clone-deep": "^4.0.4",
+    "@types/uuid": "^9.0.8",
+    "@vitejs/plugin-vue": "^5.0.3",
+    "@vue/tsconfig": "^0.5.1",
+    "@vueuse/core": "^10.7.2",
+    "autoprefixer": "^10.4.17",
+    "clone-deep": "^4.0.1",
+    "eventemitter3": "^5.0.1",
+    "flatted": "^3.2.9",
+    "nanoclone": "^1.0.2",
+    "rfdc": "^1.3.1",
+    "typescript": ">= 3.3.0 < 5.2.0",
+    "uuid": "^9.0.1",
+    "vite": "^5.0.12",
+    "vite-plugin-eslint": "^1.8.1",
+    "vite-svg-loader": "^5.1.0",
+    "vue": "^3.4.15"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@padcom/eslint-config-vue"
+    ],
+    "rules": {
+      "no-useless-constructor": 0,
+      "no-use-before-define": 0,
+      "prefer-rest-params": 0,
+      "operator-assignment": 0,
+      "@typescript-eslint/no-non-null-assertion": 0,
+      "vue/no-static-inline-styles": 0
+    }
+  },
+  "homepage": "https://github.com/padcom/draw#readme",
+  "bugs": {
+    "url": "https://github.com/padcom/draw/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/padcom/draw.git"
+  }
+}
