@@ -1,5 +1,5 @@
 {
-  "name": "@padcom/draw",
+  "name": "@padcom/undo-redo-example",
   "version": "0.0.1",
   "description": "",
   "keywords": [],
@@ -15,17 +15,13 @@
   "devDependencies": {
     "@padcom/eslint-config-vue": "^0.6.0",
     "@padcom/nano-css-reset": "^0.0.1",
-    "@types/clone-deep": "^4.0.4",
     "@types/uuid": "^9.0.8",
     "@vitejs/plugin-vue": "^5.0.3",
     "@vue/tsconfig": "^0.5.1",
     "@vueuse/core": "^10.7.2",
     "autoprefixer": "^10.4.17",
-    "clone-deep": "^4.0.1",
     "eventemitter3": "^5.0.1",
-    "flatted": "^3.2.9",
     "nanoclone": "^1.0.2",
-    "rfdc": "^1.3.1",
     "typescript": ">= 3.3.0 < 5.2.0",
     "uuid": "^9.0.1",
     "vite": "^5.0.12",
@@ -46,12 +42,12 @@
       "vue/no-static-inline-styles": 0
     }
   },
-  "homepage": "https://github.com/padcom/draw#readme",
+  "homepage": "https://github.com/padcom/undo-redo-example#readme",
   "bugs": {
-    "url": "https://github.com/padcom/draw/issues"
+    "url": "https://github.com/padcom/undo-redo-example/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/padcom/draw.git"
+    "url": "https://github.com/padcom/undo-redo-example.git"
   }
 }
