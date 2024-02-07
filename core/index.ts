@@ -16,15 +16,13 @@ class InitializeCommand implements Command {
 
   execute(): void {
     console.log(`CMD: ${chalk.blue('initialize')}`)
-    this.store.data = { x: this.value }
+    this.store.data = this.value
     this.undoRedoStack.initialize(this.store.data)
   }
 }
 
 interface Store {
-  data: {
-    x: number
-  }
+  data: number
 }
 
 class IncrementValueCommand implements Command {
@@ -36,7 +34,7 @@ class IncrementValueCommand implements Command {
 
   execute() {
     console.log(`CMD: ${chalk.blue('increment by ' + this.amount)}`)
-    this.store.data.x += this.amount
+    this.store.data += this.amount
     this.undoRedoStack.snapshot(this.store.data)
   }
 }
@@ -65,28 +63,17 @@ class RedoCommand implements Command {
   }
 }
 
-class DebugCommand implements Command {
-  constructor(private undoRedoStack: UndoRedoStack, private store: Store) {
-  }
-
-  execute() {
-    const state = chalk.yellow(JSON.stringify(this.store.data))
-    console.log(`DEBUG: state: ${state}; ${this.undoRedoStack.debug}`)
-  }
-}
-
 const undoRedoStack = new UndoRedoStack()
 
 const store: Store = {
-  data: { x: 1 }
+  data: 1
 }
 
+const initialize = new InitializeCommand(undoRedoStack, store, 0)
 const increment1 = new IncrementValueCommand(undoRedoStack, store, 1)
 const decrement1 = new IncrementValueCommand(undoRedoStack, store, -1)
-const initialize = new InitializeCommand(undoRedoStack, store, 0)
 const undo = new UndoCommand(undoRedoStack, store)
 const redo = new RedoCommand(undoRedoStack, store)
-const debug = new DebugCommand(undoRedoStack, store)
 
 const commands = [
   initialize,
@@ -103,5 +90,15 @@ const commands = [
 
 commands.forEach(command => {
   command.execute()
-  debug.execute()
 })
+
+
+
+
+
+
+function debug() {
+  const state = chalk.yellow(JSON.stringify(store.data))
+  console.log(`DEBUG: state: ${state}; ${undoRedoStack.debug}`)
+}
+
